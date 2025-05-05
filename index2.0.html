@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolve - Manutenção de Computadores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(34, 34, 37, 0.6))
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #859b8cb0;
+            color: rgba(0, 233, 50, 0.568);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgb(91, 228, 0);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #000000;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin-left: 20px;
+        }
+        
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .menu a:hover {
+            color: #16cfcf;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #050505;
+            color: #e0e6e1;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #525252;
+        }
+        
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #f1f1f1;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #000000;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-item {
+            background-color: rgba(58, 65, 58, 0.973);
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .service-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #8e969b;
+        }
+        
+        .about {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            color: #131518;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #130e0e;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background-color: #242427;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #080a0a8e;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><span>FLU</span>XO</div>
+                <ul class="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Soluções em Manutenção de Computadores</h1>
+            <p>Reparos rápidos, eficientes e com garantia para seu computador ou notebook.</p>
+            <a href="#contato" class="btn">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos uma ampla gama de serviços de manutenção para computadores e notebooks.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🖥️</div>
+                    <h3>Formatação e Instalação de Sistemas</h3>
+                    <p>Instalação de Windows, Linux e outros sistemas operacionais com backup dos seus arquivos.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Reparos de Hardware</h3>
+                    <p>Troca de peças, upgrades e soluções para problemas físicos no seu computador.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🦠</div>
+                    <h3>Remoção de Vírus</h3>
+                    <p>Limpeza completa de vírus, malwares, spywares e outros programas maliciosos.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">⚡</div>
+                    <h3>Otimização de Desempenho</h3>
+                    <p>Melhoria na velocidade e desempenho do seu computador ou notebook.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📶</div>
+                    <h3>Configuração de Redes</h3>
+                    <p>Instalação e configuração de redes Wi-Fi, cabeadas e compartilhamento de arquivos.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💾</div>
+                    <h3>Recuperação de Dados</h3>
+                    <p>Recuperação de arquivos perdidos ou corrompidos em HDs, SSDs e pendrives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="vn.jpg" alt="Equipe Fluxo">
+                </div>
+                <div class="about-text">
+                    <h2>Sobre a Fluxo</h2>
+                    <p>A TechSolve é uma empresa especializada em manutenção de computadores e notebooks, com mais de 10 anos de experiência no mercado.</p>
+                    <p>Nossa equipe é formada por técnicos certificados e apaixonados por tecnologia, sempre atualizados com as últimas tendências e soluções do mercado.</p>
+                    <p>Atendemos clientes residenciais e empresariais, oferecendo soluções personalizadas para cada necessidade.</p>
+                    <a href="#contato" class="btn">Entre em Contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Preencha o formulário abaixo para solicitar um orçamento ou tirar suas dúvidas.</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Serviço Desejado</label>
+                        <input type="text" id="service" name="service">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Fluxo - Todos os direitos reservados</p>
+                <div class="social-icons">
+                    <a href="#"><span>📱</span></a>
+                    <a href="#"><span>📘</span></a>
+                    <a href="#"><span>📸</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
